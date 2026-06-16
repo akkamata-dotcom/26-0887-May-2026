@@ -1,151 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Booking Website</title>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Booking - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Bus Booking</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-  /* TASK 4: Background color - WHITE + aesthetics */
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
+  <main>
+    <h2>Welcome to Bus Booking</h2>
+    <p>Book your bus ticket online in seconds. No queues. No hassle. Travel anywhere in Kenya with ease.</p>
 
-  body {
-    background-color: #ffffff;
-    color: #1a1a2e;
-  }
+    <h3>Kenya Travel Gallery</h3>
+    <div class="media-grid">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Nairobi_Skyline_2019.jpg/1280px-Nairobi_Skyline_2019.jpg" alt="Nairobi Skyline">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Mombasa_Old_Town.jpg/1280px-Mombasa_Old_Town.jpg" alt="Mombasa Old Town">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Kisumu_Port.jpg/1280px-Kisumu_Port.jpg" alt="Kisumu Port">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Nakuru_flamingos.jpg/1280px-Nakuru_flamingos.jpg" alt="Lake Nakuru">
+      <iframe src="https://www.youtube.com/embed/dMx-LRGRB2A" title="Nairobi City Tour" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/BHACKCNDMW8" title="Kenya Travel Guide" allowfullscreen></iframe>
+    </div>
 
-  .page-content {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 24px;
-  }
+    <div class="table-section">
+      <div class="table-heading">Today's Bus Schedule</div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Route</th>
+              <th>Departure</th>
+              <th>Arrival</th>
+              <th>Price (KES)</th>
+              <th>Seats Left</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nairobi → Mombasa</td>
+              <td>6:00 AM</td>
+              <td>2:00 PM</td>
+              <td>1,200</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>Nairobi → Kisumu</td>
+              <td>7:30 AM</td>
+              <td>1:30 PM</td>
+              <td>900</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Nairobi → Nakuru</td>
+              <td>9:00 AM</td>
+              <td>11:30 AM</td>
+              <td>400</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>Mombasa → Malindi</td>
+              <td>10:00 AM</td>
+              <td>12:00 PM</td>
+              <td>300</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>Nairobi → Eldoret</td>
+              <td>11:00 AM</td>
+              <td>4:00 PM</td>
+              <td>800</td>
+              <td>15</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
 
-  h1 { font-size: 28px; margin: 20px 0 8px; color: #0d47a1; }
-  h2 { font-size: 22px; margin: 20px 0 10px; color: #1565c0; }
-  h3 { font-size: 18px; margin: 16px 0 8px; color: #1976d2; }
-  h4 { font-size: 16px; margin: 14px 0 8px; color: #1e88e5; }
-  h5 { font-size: 14px; margin: 12px 0 8px; color: #1e88e5; }
-
-  p  { line-height: 1.8; margin-bottom: 12px; }
-  hr { border: none; border-top: 2px solid #90caf9; margin: 16px 0; }
-  ul, ol { padding-left: 28px; margin-bottom: 12px; line-height: 1.9; }
-
-
-  /* TASK 1: Centered navigation - BLUE background */
-  nav {
-    background-color: #1565c0;
-    padding: 16px 0;
-    text-align: center;
-  }
-
-  nav a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 28px;
-    font-size: 16px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    padding-bottom: 4px;
-    border-bottom: 2px solid transparent;
-  }
-
-  nav a:hover {
-    color: #bbdefb;
-    border-bottom: 2px solid #90caf9;
-  }
-
-
-  /* TASK 2: Full page table */
-  .table-heading {
-    background-color: #0d47a1;
-    color: #ffffff;
-    text-align: center;
-    padding: 14px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 8px 8px 0 0;
-  }
-
-  .table-wrapper {
-    border: 2px solid #1565c0;
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 20px 0;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #ffffff;
-  }
-
-  thead tr { background-color: #1976d2; }
-
-  thead th {
-    color: #e3f2fd;
-    padding: 12px 14px;
-    text-align: left;
-    font-size: 14px;
-    border-right: 1px solid #42a5f5;
-    border-bottom: 2px solid #0d47a1;
-  }
-
-  tbody tr:nth-child(odd)  { background-color: #e3f2fd; }
-  tbody tr:nth-child(even) { background-color: #ffffff; }
-  tbody tr:hover           { background-color: #bbdefb; }
-
-  td {
-    padding: 10px 14px;
-    font-size: 13px;
-    border: 1px solid #90caf9;
-    color: #0d47a1;
-  }
+  <footer>
+    <p>&copy; 2026 Bus Booking. All rights reserved.</p>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a>
+    </p>
+  </footer>
+</body>
+</html>
+  
 
 
-  /* TASK 3: Images and videos grid - 2 columns x 3 rows */
-  .media-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    margin: 20px 0;
-  }
-
-  .media-grid img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 2px solid #90caf9;
-    display: block;
-  }
-
-  .media-grid iframe {
-    width: 100%;
-    height: 230px;
-    border-radius: 8px;
-    border: 2px solid #90caf9;
-    display: block;
-  }
-
-  audio {
-    width: 100%;
-    margin: 12px 0;
-    display: block;
-  }
-
-  .footer {
-    text-align: center;
-    padding: 18px;
-    margin-top: 30px;
-    border-top: 2px solid #90caf9;
-    color: #1565c0;
-    font-size: 13px;
-    background-color: #e3f2fd;
-    border-radius: 8px;
-  }
-
-</
- 
+   
