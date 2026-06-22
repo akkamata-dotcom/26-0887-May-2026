@@ -31,6 +31,21 @@ nav a:hover {
   text-decoration: underline;
 }
 
+nav a.active {
+  text-decoration: underline;
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: #0a1f44;
+  padding: 10px 0;
+}
+
+header h1 {
+  text-align: center;
+  padding: 10px 0 5px;
+}
+
 /* ===== HEADINGS ===== */
 h1, h2, h3, h4, h5 {
   color: #ff8a8a;
@@ -46,74 +61,135 @@ hr {
 }
 
 /* ===== MAIN CONTENT AREA ===== */
-.content {
+main {
   padding: 20px 30px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ===== TABLE ===== */
-.routes-table {
+main h2,
+main h3,
+main h4 {
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+main p,
+main ul,
+main ol {
+  margin-bottom: 12px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #061530;
+  color: #f5f5f5;
+  margin-top: 30px;
+}
+
+footer a {
+  color: #ff8a8a;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== GALLERY IMAGES ===== */
+.gallery-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 10;
+}
+
+/* ===== TABLE SECTION (About & Contact pages) ===== */
+.table-section {
+  margin: 24px 0;
+}
+
+.table-heading {
+  background-color: #1565c0;
+  color: #ffffff;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 4px 4px 0 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+/* ===== GENERIC TABLE (About & Contact pages) ===== */
+table {
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
-  margin: 20px 0;
   border: 2px solid #ff8a8a;
 }
 
-.routes-table thead tr {
+th {
   background-color: #1565c0;
   color: #ffffff;
-}
-
-.routes-table th {
   border: 1px solid #7098c4;
   padding: 10px 12px;
   text-align: left;
   font-weight: 600;
 }
 
-.routes-table td {
+td {
   border: 1px solid #7098c4;
   padding: 10px 12px;
+  color: #0a1f44;
 }
 
-.routes-table tbody tr:nth-child(odd) {
+tbody tr:nth-child(odd) {
   background-color: #bbdefb;
-  color: #0a1f44;
 }
 
-.routes-table tbody tr:nth-child(even) {
+tbody tr:nth-child(even) {
   background-color: #ffffff;
-  color: #0a1f44;
 }
 
-/* ===== VIDEO GRID ===== */
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  justify-items: center;
-}
-
-.video-grid div {
+/* ===== DISCOUNT BANNER ===== */
+#discount-banner {
+  background-color: #ff6b6b;
+  color: #ffffff;
   text-align: center;
-  width: 100%;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
 }
 
-.video-grid iframe {
-  width: 100%;
-  max-width: 560px;
-  height: 315px;
-  border-radius: 8px;
-  border: 2px solid #ff8a8a;
+#discount-banner span {
+  font-size: 20px;
 }
 
-.video-grid p {
-  margin-top: 8px;
-  color: #f5f5f5;
+#close-banner {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 2px solid #ffffff;
+  color: #ffffff;
   font-size: 14px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#close-banner:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
