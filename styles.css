@@ -1,8 +1,17 @@
-/* ===== BASE & RESET ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* ===== LISTS ===== */
+ul, ol {
+  padding-left: 28px;   /* restores bullet/number indent */
+  margin-bottom: 12px;
+}
+
+ul li, ol li {
+  margin-bottom: 4px;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-left: 20px;   /* extra indent for nested sub-lists */
 }
 
 body {
