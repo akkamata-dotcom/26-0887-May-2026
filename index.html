@@ -3,6 +3,47 @@
 <head>
 <title>Booking Website</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: #0a1f44;
+      color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+    nav {
+      text-align: center;
+      padding: 15px 0;
+      background-color: #ff6b6b;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    h1, h2, h3, h4, h5 {
+      color: #ff8a8a;
+    }
+    hr {
+      border: 1px solid #ff8a8a;
+    }
+     .gallery-img {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery-img:hover {
+      transform: scale(1.15);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      position: relative;
+      z-index: 10;
+    }
+    h1 {
+  text-align: center;
+}
+  </style>
 </head>
 <body>
   <nav>
@@ -66,94 +107,95 @@
         </ul>
 
        <h5>OUR ROUTES AND FARE CHARGES</h5>  
-<table>
+<table style="width:100%;border-collapse:collapse;font-size:14px;">
   <thead>
-    <tr>
-      <th>Route</th>
-      <th>Morning Time</th>
-      <th>Afternoon Time</th>
-      <th>Evening Time</th>
-      <th>Price (KSh)</th>
+    <tr style="background-color:#1565c0;color:#ffffff;">
+      <th style="border:1px solid #ccc;padding:10px 12px;text-align:left;font-weight:500;">Route</th>
+      <th style="border:1px solid #ccc;padding:10px 12px;text-align:left;font-weight:500;">Morning Time</th>
+      <th style="border:1px solid #ccc;padding:10px 12px;text-align:left;font-weight:500;">Afternoon Time</th>
+      <th style="border:1px solid #ccc;padding:10px 12px;text-align:left;font-weight:500;">Evening Time</th>
+      <th style="border:1px solid #ccc;padding:10px 12px;text-align:left;font-weight:500;">Price (KSh)</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Nairobi → Mombasa</td>
-      <td>6:00 AM</td>
-      <td>12:00 PM</td>
-      <td>8:00 PM</td>
-      <td>1,500</td>
+    <tr style="background-color:#e3f2fd;">
+      <td style="border:1px solid #ccc;padding:10px 12px;">Nairobi → Mombasa</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">6:00 AM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">12:00 PM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">8:00 PM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">1,500</td>
     </tr>
-    <tr>
-      <td>Nairobi → Kisumu</td>
-      <td>7:00 AM</td>
-      <td>1:00 PM</td>
-      <td>9:00 PM</td>
-      <td>1,200</td>
+    <tr style="background-color:#ffffff;">
+      <td style="border:1px solid #ccc;padding:10px 12px;">Nairobi → Kisumu</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">7:00 AM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">1:00 PM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">9:00 PM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">1,200</td>
     </tr>
-    <tr>
-      <td>Nairobi → Nakuru</td>
-      <td>5:30 AM</td>
-      <td>11:00 AM</td>
-      <td>6:00 PM</td>
-      <td>500</td>
+    <tr style="background-color:#e3f2fd;">
+      <td style="border:1px solid #ccc;padding:10px 12px;">Nairobi → Nakuru</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">5:30 AM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">11:00 AM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">6:00 PM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">500</td>
     </tr>
-    <tr>
-      <td>Nairobi → Eldoret</td>
-      <td>6:30 AM</td>
-      <td>12:30 PM</td>
-      <td>7:30 PM</td>
-      <td>900</td>
+    <tr style="background-color:#ffffff;">
+      <td style="border:1px solid #ccc;padding:10px 12px;">Nairobi → Eldoret</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">6:30 AM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">12:30 PM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">7:30 PM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">900</td>
     </tr>
-    <tr>
-      <td>Mombasa → Kisumu</td>
-      <td>8:00 AM</td>
-      <td>2:00 PM</td>
-      <td>10:00 PM</td>
-      <td>2,000</td>
+    <tr style="background-color:#e3f2fd;">
+      <td style="border:1px solid #ccc;padding:10px 12px;">Mombasa → Kisumu</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">8:00 AM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">2:00 PM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">10:00 PM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">2,000</td>
     </tr>
-    <tr>
-      <td>Nakuru → Eldoret</td>
-      <td>7:30 AM</td>
-      <td>1:30 PM</td>
-      <td>8:30 PM</td>
-      <td>700</td>
+    <tr style="background-color:#ffffff;">
+      <td style="border:1px solid #ccc;padding:10px 12px;">Nakuru → Eldoret</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">7:30 AM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">1:30 PM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">8:30 PM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">700</td>
     </tr>
-    <tr>
-      <td>Kisumu → Eldoret</td>
-      <td>9:00 AM</td>
-      <td>3:00 PM</td>
-      <td>9:30 PM</td>
-      <td>850</td>
+    <tr style="background-color:#e3f2fd;">
+      <td style="border:1px solid #ccc;padding:10px 12px;">Kisumu → Eldoret</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">9:00 AM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">3:00 PM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">9:30 PM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">850</td>
     </tr>
-    <tr>
-      <td>Nairobi → Malindi</td>
-      <td>6:00 AM</td>
-      <td>1:00 PM</td>
-      <td>7:00 PM</td>
-      <td>1,800</td>
+    <tr style="background-color:#ffffff;">
+      <td style="border:1px solid #ccc;padding:10px 12px;">Nairobi → Malindi</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">6:00 AM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">1:00 PM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">7:00 PM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">1,800</td>
     </tr>
-    <tr>
-      <td>Nairobi → Kitale</td>
-      <td>5:00 AM</td>
-      <td>11:30 AM</td>
-      <td>6:30 PM</td>
-      <td>1,100</td>
+    <tr style="background-color:#e3f2fd;">
+      <td style="border:1px solid #ccc;padding:10px 12px;">Nairobi → Kitale</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">5:00 AM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">11:30 AM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">6:30 PM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">1,100</td>
     </tr>
-    <tr>
-      <td>Nakuru → Naivasha</td>
-      <td>8:00 AM</td>
-      <td>2:30 PM</td>
-      <td>8:00 PM</td>
-      <td>300</td>
+    <tr style="background-color:#ffffff;">
+      <td style="border:1px solid #ccc;padding:10px 12px;">Nakuru → Naivasha</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">8:00 AM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">2:30 PM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">8:00 PM</td>
+      <td style="border:1px solid #ccc;padding:10px 12px;">300</td>
     </tr>
   </tbody>
 </table>
 
         <h2>Watch Our Bus Booking Tutorial</h2>
-<div>
-  <div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:20px;padding:20px;max-width:1200px;margin:0 auto;justify-items:center;">
+  <div style="text-align:center;">
     <iframe width="100%" height="315"
+            style="max-width:560px;border-radius:8px;border:2px solid #ff8a8a;"
             src="https://www.youtube.com/embed/vBE3E3MTuOg"
             title="Bus Booking Tutorial Video"
             frameborder="0"
@@ -163,8 +205,9 @@
     <p><em>Learn how to book your bus ticket easily</em></p>
   </div>
 
-  <div>
+  <div style="text-align:center;">
     <iframe width="100%" height="315"
+            style="max-width:560px;border-radius:8px;border:2px solid #ff8a8a;"
             src="https://www.youtube.com/embed/t3Tt89Td3_8"
             title="Second Tutorial Video"
             frameborder="0"
@@ -175,6 +218,12 @@
   </div>
 </div>
 
+
+ 
+   
+
+
+   
         <h3>Our customer reviews</h3>
         <audio controls>
 <source src="https://github.com/akkamata-dotcom/26-0887-May-2026/raw/main/ElevenLabs_2026-06-02T08_58_29_Adam%20-%20Engaging%2C%20Friendly%20and%20Bright_pvc_sp95_s75_sb75_se40_b_m2.mp3"
@@ -183,17 +232,22 @@ type="audio/mpeg">
   <br><br>
    
  <h5>OUR TRAVEL IMAGES</h5>
-  <div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:16px;padding:20px;max-width:1200px;margin:0 auto;">
   <img src="https://github.com/akkamata-dotcom/26-0887-May-2026/raw/main/Gemini_Generated_Image_x4px80x4px80x4px.png"
-       alt="bus travel" class="gallery-img">
+       alt="bus travel" class="gallery-img"
+       style="width:100%;height:250px;object-fit:cover;border-radius:8px;border:2px solid #ff8a8a;">
   <img src="https://github.com/akkamata-dotcom/26-0887-May-2026/raw/main/Gemini_Generated_Image_sri46bsri46bsri4.png"
-       alt="bus travel" class="gallery-img">
+       alt="bus travel" class="gallery-img"
+       style="width:100%;height:250px;object-fit:cover;border-radius:8px;border:2px solid #ff8a8a;">
   <img src="https://github.com/akkamata-dotcom/26-0887-May-2026/raw/main/Gemini_Generated_Image_gqwipygqwipygqwi.png"
-       alt="bus travel" class="gallery-img">
+       alt="bus travel" class="gallery-img"
+       style="width:100%;height:250px;object-fit:cover;border-radius:8px;border:2px solid #ff8a8a;">
   <img src="https://github.com/akkamata-dotcom/26-0887-May-2026/raw/main/Gemini_Generated_Image_m18scom18scom18s.png"
-       alt="bus travel" class="gallery-img">
+       alt="bus travel" class="gallery-img"
+       style="width:100%;height:250px;object-fit:cover;border-radius:8px;border:2px solid #ff8a8a;">
   <img src="https://github.com/akkamata-dotcom/26-0887-May-2026/raw/main/Gemini_Generated_Image_rtruzwrtruzwrtru.png"
-       alt="bus travel" class="gallery-img">
+       alt="bus travel" class="gallery-img"
+       style="width:100%;height:250px;object-fit:cover;border-radius:8px;border:2px solid #ff8a8a;">
 </div>
 
 
@@ -202,3 +256,8 @@ type="audio/mpeg">
   </p>
 </body>
 </html>
+
+    
+         
+
+   
