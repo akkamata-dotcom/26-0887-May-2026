@@ -3,298 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Form</title>
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      padding: 20px;
-    }
-
-    .card {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 40px;
-      width: 100%;
-      max-width: 480px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-    }
-
-    .card h1 {
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: #1a1a2e;
-      margin-bottom: 6px;
-    }
-
-    .card p.subtitle {
-      font-size: 0.9rem;
-      color: #6b7280;
-      margin-bottom: 32px;
-    }
-
-    .field {
-      margin-bottom: 22px;
-    }
-
-    label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #374151;
-      margin-bottom: 6px;
-    }
-
-    label span.required {
-      color: #ef4444;
-      margin-left: 2px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"] {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1.5px solid #d1d5db;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      color: #111827;
-      background: #f9fafb;
-      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
-      outline: none;
-    }
-
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    input[type="tel"]:focus {
-      border-color: #667eea;
-      background: #ffffff;
-      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
-    }
-
-    input.error {
-      border-color: #ef4444 !important;
-      background: #fff5f5 !important;
-      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12) !important;
-    }
-
-    .error-msg {
-      display: none;
-      font-size: 0.78rem;
-      color: #ef4444;
-      margin-top: 5px;
-      font-weight: 500;
-    }
-
-    .error-msg.visible {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .error-msg::before {
-      content: "⚠";
-      font-size: 0.75rem;
-    }
-
-    .gender-group {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .gender-option {
-      flex: 1;
-      min-width: 90px;
-    }
-
-    .gender-option input[type="radio"] {
-      display: none;
-    }
-
-    .gender-option label {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 16px;
-      border: 1.5px solid #d1d5db;
-      border-radius: 8px;
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: #6b7280;
-      background: #f9fafb;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-align: center;
-    }
-
-    .gender-group.error-border .gender-option label {
-      border-color: #ef4444;
-      background: #fff5f5;
-    }
-
-    .gender-option input[type="radio"]:checked + label {
-      border-color: #667eea !important;
-      background: #667eea !important;
-      color: #ffffff;
-      box-shadow: 0 2px 8px rgba(102, 126, 234, 0.35);
-    }
-
-    .gender-option label:hover {
-      border-color: #667eea;
-      color: #667eea;
-    }
-
-    .gender-option input[type="radio"]:checked + label:hover {
-      color: #ffffff;
-    }
-
-    .submit-btn {
-      width: 100%;
-      padding: 13px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: #ffffff;
-      font-size: 1rem;
-      font-weight: 600;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 8px;
-      letter-spacing: 0.3px;
-      transition: opacity 0.2s, transform 0.15s;
-    }
-
-    .submit-btn:hover {
-      opacity: 0.92;
-      transform: translateY(-1px);
-    }
-
-    .submit-btn:active {
-      transform: translateY(0);
-    }
-
-    .success-banner {
-      display: none;
-      background: #ecfdf5;
-      border: 1.5px solid #6ee7b7;
-      border-radius: 8px;
-      padding: 14px 16px;
-      margin-top: 20px;
-      font-size: 0.9rem;
-      color: #065f46;
-      font-weight: 500;
-      text-align: center;
-    }
-
-    .success-banner.visible {
-      display: block;
-    }
-
-    .shake {
-      animation: shake 0.35s ease;
-    }
-
-    @keyframes shake {
-      0%, 100% { transform: translateX(0); }
-      20%       { transform: translateX(-6px); }
-      40%       { transform: translateX(6px); }
-      60%       { transform: translateX(-4px); }
-      80%       { transform: translateX(4px); }
-    }
-  </style>
+  <title>Register with Us - Bus Booking</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <div class="card">
-    <h1>Tell us about you</h1>
-    <p class="subtitle">All fields are required — please don't leave anything blank.</p>
+  <header>
+    <h1>Bus Booking</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-    <form id="contactForm" novalidate>
+  <main>
+    <h2>Register with us</h2>
+    <p>All fields are required — please don't leave anything blank.</p>
+    <hr />
 
-      <div class="field">
-        <label for="name">Full Name <span class="required">*</span></label>
+    <form id="contactForm" class="contact-form" novalidate>
+
+      <div class="form-group">
+        <label for="name">Full Name *</label>
         <input type="text" id="name" name="name" placeholder="Jane Doe" />
-        <span class="error-msg" id="nameError"></span>
+        <span class="form-error" id="nameError"></span>
       </div>
 
-      <div class="field">
-        <label for="email">Email Address <span class="required">*</span></label>
+      <div class="form-group">
+        <label for="email">Email Address *</label>
         <input type="email" id="email" name="email" placeholder="jane@example.com" />
-        <span class="error-msg" id="emailError"></span>
+        <span class="form-error" id="emailError"></span>
       </div>
 
-      <div class="field">
-        <label for="phone">Phone Number <span class="required">*</span></label>
-        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" />
-        <span class="error-msg" id="phoneError"></span>
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="+254 712 345 678" />
+        <span class="form-error" id="phoneError"></span>
       </div>
 
-      <div class="field">
-        <label>Gender <span class="required">*</span></label>
-        <div class="gender-group" id="genderGroup">
-          <div class="gender-option">
-            <input type="radio" id="male" name="gender" value="male" />
-            <label for="male">Male</label>
-          </div>
-          <div class="gender-option">
-            <input type="radio" id="female" name="gender" value="female" />
-            <label for="female">Female</label>
-          </div>
-          <div class="gender-option">
-            <input type="radio" id="nonbinary" name="gender" value="non-binary" />
-            <label for="nonbinary">Non-binary</label>
-          </div>
-          <div class="gender-option">
-            <input type="radio" id="prefer_not" name="gender" value="prefer_not_to_say" />
-            <label for="prefer_not">Prefer not to say</label>
-          </div>
-        </div>
-        <span class="error-msg" id="genderError"></span>
+      <div class="form-group">
+        <label for="gender">Gender *</label>
+        <select id="gender" name="gender">
+          <option value="">-- Select Gender --</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="non-binary">Non-binary</option>
+          <option value="prefer_not_to_say">Prefer not to say</option>
+        </select>
+        <span class="form-error" id="genderError"></span>
       </div>
 
-      <button type="submit" class="submit-btn">Submit</button>
+      <button type="submit" class="form-btn">Register</button>
 
-      <div class="success-banner" id="successBanner">
-        ✓ Thanks! Your details have been submitted successfully.
+      <div class="form-success" id="successBanner" style="display:none;">
+        ✅ Thank you! You have been registered successfully.
       </div>
 
     </form>
-  </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Bus Booking. All rights reserved.</p>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a>
+    </p>
+  </footer>
 
   <script>
-    const form = document.getElementById('contactForm');
+    var form = document.getElementById('contactForm');
 
     function setError(inputEl, errorEl, message) {
-      if (inputEl) {
-        inputEl.classList.add('error');
-        inputEl.classList.remove('shake');
-        void inputEl.offsetWidth;
-        inputEl.classList.add('shake');
-      }
+      inputEl.classList.add('input-error');
+      inputEl.classList.remove('shake');
+      void inputEl.offsetWidth;
+      inputEl.classList.add('shake');
       errorEl.textContent = message;
-      errorEl.classList.add('visible');
+      errorEl.style.display = 'block';
     }
 
     function clearError(inputEl, errorEl) {
-      if (inputEl) inputEl.classList.remove('error', 'shake');
+      inputEl.classList.remove('input-error', 'shake');
       errorEl.textContent = '';
-      errorEl.classList.remove('visible');
+      errorEl.style.display = 'none';
     }
 
     function validateName(showErrors) {
-      const input = document.getElementById('name');
-      const errorEl = document.getElementById('nameError');
-      const val = input.value.trim();
+      var input = document.getElementById('name');
+      var errorEl = document.getElementById('nameError');
+      var val = input.value.trim();
       if (val === '') {
         if (showErrors) setError(input, errorEl, "Please don't leave this blank — enter your full name.");
         return false;
@@ -308,9 +107,9 @@
     }
 
     function validateEmail(showErrors) {
-      const input = document.getElementById('email');
-      const errorEl = document.getElementById('emailError');
-      const val = input.value.trim();
+      var input = document.getElementById('email');
+      var errorEl = document.getElementById('emailError');
+      var val = input.value.trim();
       if (val === '') {
         if (showErrors) setError(input, errorEl, "Please don't leave this blank — enter your email address.");
         return false;
@@ -324,10 +123,10 @@
     }
 
     function validatePhone(showErrors) {
-      const input = document.getElementById('phone');
-      const errorEl = document.getElementById('phoneError');
-      const val = input.value.trim();
-      const digits = val.replace(/[\s\-().+]/g, '');
+      var input = document.getElementById('phone');
+      var errorEl = document.getElementById('phoneError');
+      var val = input.value.trim();
+      var digits = val.replace(/[\s\-().+]/g, '');
       if (val === '') {
         if (showErrors) setError(input, errorEl, "Please don't leave this blank — enter your phone number.");
         return false;
@@ -341,63 +140,46 @@
     }
 
     function validateGender(showErrors) {
-      const selected = document.querySelector('input[name="gender"]:checked');
-      const errorEl = document.getElementById('genderError');
-      const group = document.getElementById('genderGroup');
-      if (!selected) {
-        if (showErrors) {
-          group.classList.add('error-border');
-          errorEl.textContent = "Please don't leave this blank — select a gender option.";
-          errorEl.classList.add('visible');
-        }
+      var input = document.getElementById('gender');
+      var errorEl = document.getElementById('genderError');
+      if (input.value === '') {
+        if (showErrors) setError(input, errorEl, "Please don't leave this blank — select a gender option.");
         return false;
       }
-      group.classList.remove('error-border');
-      errorEl.textContent = '';
-      errorEl.classList.remove('visible');
+      clearError(input, errorEl);
       return true;
     }
 
-    document.getElementById('name').addEventListener('blur', () => validateName(true));
-    document.getElementById('name').addEventListener('input', () => {
-      if (document.getElementById('name').classList.contains('error')) validateName(true);
+    document.getElementById('name').addEventListener('blur', function () { validateName(true); });
+    document.getElementById('name').addEventListener('input', function () {
+      if (document.getElementById('name').classList.contains('input-error')) validateName(true);
     });
 
-    document.getElementById('email').addEventListener('blur', () => validateEmail(true));
-    document.getElementById('email').addEventListener('input', () => {
-      if (document.getElementById('email').classList.contains('error')) validateEmail(true);
+    document.getElementById('email').addEventListener('blur', function () { validateEmail(true); });
+    document.getElementById('email').addEventListener('input', function () {
+      if (document.getElementById('email').classList.contains('input-error')) validateEmail(true);
     });
 
-    document.getElementById('phone').addEventListener('blur', () => validatePhone(true));
-    document.getElementById('phone').addEventListener('input', () => {
-      if (document.getElementById('phone').classList.contains('error')) validatePhone(true);
+    document.getElementById('phone').addEventListener('blur', function () { validatePhone(true); });
+    document.getElementById('phone').addEventListener('input', function () {
+      if (document.getElementById('phone').classList.contains('input-error')) validatePhone(true);
     });
 
-    document.querySelectorAll('input[name="gender"]').forEach(r =>
-      r.addEventListener('change', () => validateGender(true))
-    );
+    document.getElementById('gender').addEventListener('change', function () { validateGender(true); });
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      const n = validateName(true);
-      const em = validateEmail(true);
-      const ph = validatePhone(true);
-      const g = validateGender(true);
+      var n  = validateName(true);
+      var em = validateEmail(true);
+      var ph = validatePhone(true);
+      var g  = validateGender(true);
       if (!n || !em || !ph || !g) return;
 
-      const data = {
-        name: document.getElementById('name').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        phone: document.getElementById('phone').value.trim(),
-        gender: document.querySelector('input[name="gender"]:checked').value,
-      };
-
-      console.log('Form submitted:', data);
-
-      document.getElementById('successBanner').classList.add('visible');
+      document.getElementById('successBanner').style.display = 'block';
       form.reset();
-      document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
-      document.getElementById('genderGroup').classList.remove('error-border');
+      ['name', 'email', 'phone', 'gender'].forEach(function (id) {
+        document.getElementById(id).classList.remove('input-error');
+      });
     });
   </script>
 
